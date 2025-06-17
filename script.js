@@ -12,20 +12,36 @@ function typeWriter() {
 }
 typeWriter();
 
-// Popup logic
+// Popup ucapan
 const showMessage = document.getElementById("show-message");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("close-popup");
 
 showMessage.addEventListener("click", () => {
-  popup.classList.add("show");
+  popup.classList.remove("hidden");
 });
 
 closePopup.addEventListener("click", () => {
-  popup.classList.remove("show");
+  popup.classList.add("hidden");
 });
 
-// Efek bunga
+// Tombol untuk putar musik (agar tidak diblokir browser)
+const musicBtn = document.getElementById("play-music");
+const music = document.getElementById("bg-music");
+
+musicBtn.addEventListener("click", () => {
+  music
+    .play()
+    .then(() => {
+      musicBtn.textContent = "🎵 Musik Sedang Diputar";
+      musicBtn.disabled = true;
+    })
+    .catch((err) => {
+      alert("Gagal memutar musik: " + err);
+    });
+});
+
+// Efek kelopak bunga
 const canvas = document.getElementById("flowers");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
