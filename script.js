@@ -12,20 +12,20 @@ function typeWriter() {
 }
 typeWriter();
 
-// Popup ucapan
+// Popup logic
 const showMessage = document.getElementById("show-message");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("close-popup");
 
 showMessage.addEventListener("click", () => {
-  popup.classList.remove("hidden");
+  popup.classList.add("show");
 });
 
 closePopup.addEventListener("click", () => {
-  popup.classList.add("hidden");
+  popup.classList.remove("show");
 });
 
-// Efek kelopak bunga
+// Efek bunga
 const canvas = document.getElementById("flowers");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
