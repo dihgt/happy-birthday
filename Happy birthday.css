@@ -1,73 +1,92 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffdce0, #fff);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  animation: popUp 1.5s ease;
-  z-index: 1;
-}
-
-.foto {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  border: 4px solid white;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+.container {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
-  color: #fff;
-  margin-bottom: 10px;
-  font-size: 24px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: #c0392b;
+    margin-bottom: 30px;
 }
 
-p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.6;
+.foto {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 1.5s;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
+button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff9a9e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.delay {
-  animation-delay: 1s;
+button:hover {
+    background-color: #f67280;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-@keyframes popUp {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-canvas#confetti {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
+canvas#flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }

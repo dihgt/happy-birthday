@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎉 Selamat Ulang Tahun</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <canvas id="confetti"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun</title>
+    <link rel="stylesheet" href="Happy birthday.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="flowers"></canvas>
 
-  <div class="card">
-    <img src="foto-teman.jpg" alt="Foto Teman" class="foto" />
-    <h1 class="fade-in">Selamat Ulang Tahun, Dina! 🎂</h1>
-    <p class="fade-in delay">
-      Semoga hari-harimu selalu seindah senyumanmu 💖  
-      Teruslah bersinar dan membahagiakan sekitar ✨
-    </p>
-    <audio id="music" src="musik.mp3" autoplay loop></audio>
-  </div>
+    <div class="container">
+      <h1 id="typing-text"></h1>
+      <img src="beach-ocean.jpg" alt="Foto teman" class="foto" />
+      <br />
+      <button id="show-message">Lihat Pesan</button>
+    </div>
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-</body>
+    <div id="popup" class="hidden">
+      <div class="popup-content">
+        <p>Semoga hari ini penuh kebahagiaan dan senyuman 💕</p>
+        <button id="close-popup">Tutup</button>
+      </div>
+    </div>
+
+    <audio autoplay loop>
+      <source src="happy-birthday-to-you.mp3" type="audio/mp3" />
+      Browser kamu tidak mendukung audio.
+    </audio>
+
+    <script src="Happy birthday.js"></script>
+  </body>
 </html>
